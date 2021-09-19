@@ -1,0 +1,22 @@
+{
+    "name": "Lctrl_NeoPixel",
+    "version": "0.0.1",
+    "description": "More function to control a NeoPixel strip",
+    "repository":
+    {
+      "type": "git",
+      "url": "https://github.com/yopnano/BeOutils/Lctrl/Lctrl_Lcd.git"
+    },
+    "authors":
+    [
+      {
+        "name": "yann herledan",
+        "email": "yannherledan1@gmail.com"
+      }
+    ],
+    "dependencies": {
+      "adafruit/Adafruit NeoPixel": "^1.8.5"
+    },
+    "frameworks": "*",
+    "platforms": "*"
+  }

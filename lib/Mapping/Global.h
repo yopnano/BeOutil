@@ -26,12 +26,19 @@
     
 
 //Lctrl
+    //Lctrl_LCD
+    #include <Lctrl_Lcd\Lctrl_Lcd.h>
+
     //Lctrl_Moteur
     #include <Lctrl_Moteur\Lctrl_MoteurPWM\Lctrl_MoteurPWM.h>
     #include <Lctrl_Moteur\Lctrl_MoteurTOR\Lctrl_MoteurTOR.h>
     #include <Lctrl_Moteur\Lctrl_DriveS500\Lctrl_DriveS500.h>
     #include <Lctrl_Moteur\Lctrl_Brushless\Lctrl_Brushless.h>
     #include <Lctrl_Moteur\Lctrl_Servo\Lctrl_Servo.h>
+
+    //Lctrl_NeoPixel
+    #include <Lctrl_NeoPixel\Lctrl_NeoPixel.h>
+
 //Lio
     #include <LioTor\LioTor.cpp>
     #include <LioPwm\LioPwm.cpp>
