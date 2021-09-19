@@ -1,4 +1,4 @@
-#include "Lctr_Lcd.h"
+#include "Lctrl_Lcd.h"
 
 Lctrl_Lcd::Lctrl_Lcd(const uint8_t lcd_Addr, const uint8_t lcd_cols, const uint8_t lcd_rows)
 :
