@@ -1,20 +1,16 @@
 #include "Lsys_Fimpulse.h"
 
 // Constructeur
-Lsys_Fimpulse::Lsys_Fimpulse(uint32_t periodMs) :    iLsys_Fperiod(periodMs) {}
+Lsys_Fimpulse::Lsys_Fimpulse(uint32_t periodMs)
+:   Dlay(periodMs),
+    lastMillis(millis())
+{}
 
-bool Lsys_Fimpulse::impulse()
+bool Lsys_Fimpulse::pulse()
 {
-    iTrigger.Analyse(iLsys_Fperiod.clock());
-    return iTrigger.R_trig();
-}
+    bool ft = millis() - lastMillis >= Dlay;
 
-void Lsys_Fimpulse::restart() 
-{
-    iLsys_Fperiod.restart();
-}
+    if (ft) lastMillis += Dlay;
 
-void Lsys_Fimpulse::changePeriod(uint32_t periodMs)
-{
-    iLsys_Fperiod.changePeriod(periodMs);
+    return ft;
 }

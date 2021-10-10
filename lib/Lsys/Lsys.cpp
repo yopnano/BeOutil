@@ -41,16 +41,16 @@ Lsys::Lsys() :
 
         // Bits horloges
         m_clock10Hz = iLsys_Fperiod10Hz.clock();
-        m_ft10Hz = iLsys_Fimpulse10Hz.impulse();
+        m_ft10Hz = iLsys_Fimpulse10Hz.pulse();
 
         m_clock2Hz = iLsys_Fperiod2Hz.clock();
-        m_ft2Hz = iLsys_Fimpulse2Hz.impulse();
+        m_ft2Hz = iLsys_Fimpulse2Hz.pulse();
 
         m_clock1Hz = iLsys_Fperiod1Hz.clock();
-        m_ft1Hz = iLsys_Fimpulse1Hz.impulse();
+        m_ft1Hz = iLsys_Fimpulse1Hz.pulse();
 
         m_clock1min = iLsys_Fperiod1min.clock();
-        m_ft1min = iLsys_Fimpulse1min.impulse();
+        m_ft1min = iLsys_Fimpulse1min.pulse();
     }
 
   

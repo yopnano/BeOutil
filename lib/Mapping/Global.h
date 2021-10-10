@@ -2,7 +2,7 @@
 #define Global_h
 
 
-#define ProjectName "LibBib DEV 0.2 [en cours de test]"
+#define ProjectName "LightDectNeoSw DEV 0.1 [en cours de test]"
 
 
 /* 
@@ -26,9 +26,6 @@
     
 
 //Lctrl
-    //Lctrl_LCD
-    #include <Lctrl_Lcd\Lctrl_Lcd.h>
-
     //Lctrl_Moteur
     #include <Lctrl_Moteur\Lctrl_MoteurPWM\Lctrl_MoteurPWM.h>
     #include <Lctrl_Moteur\Lctrl_MoteurTOR\Lctrl_MoteurTOR.h>
@@ -38,11 +35,11 @@
 
     //Lctrl_NeoPixel
     #include <Lctrl_NeoPixel\Lctrl_NeoPixel.h>
-
+    
 //Lio
     #include <LioTor\LioTor.cpp>
     #include <LioPwm\LioPwm.cpp>
-    #include <LioAna\LioAna_Fscale\LioAna_Fscale.cpp>
+    #include <LioAna\LioAna.h>
 
 //Lreg
     #include <LregPID\Lreg_PID.h>
