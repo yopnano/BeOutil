@@ -14,18 +14,29 @@ void loop()
   sys.main();
   ModMain();
 
+
+
+  if (sys.ft1Hz()) Serial.println( (double) mesureCourant.val());
+
+
+
+
+
+
+// Test de moteur codeur
   moteur.pidMode(false);
   moteur.csgAuto(255);
   moteur.cmdAv(true);
   //double vitesse = codeur.vitesseAbs() * 0.233;
 
-  if (sys.ft2Hz())
+  if (sys.ft2Hz()and false)
   {
     Serial.print("vitesse : " + (String) codeur.vitesse());
     Serial.println("  position : " + (String) codeur.position());
   }
 
   if (sys.ft1Hz()) tempo1s ++;
+
 
   if (g7 == 0)
   {

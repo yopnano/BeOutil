@@ -8,7 +8,7 @@
     @param HI_LIM mesure supérieure valeur 100
     @param offset décalage de la valeur (0 par défaut)
 */
-LioAnaIn::LioAnaIn(uint8_t pin, int LO_DEF, int HI_DEF, double LO_LIM, double HI_LIM, double offset)
+LioAnaIn::LioAnaIn(uint8_t pin, int LO_DEF, int HI_DEF, int LO_LIM, int HI_LIM, int offset)
 :   m_pin (pin),
     m_LO_DEF(LO_DEF),
     m_HI_DEF(HI_DEF),
@@ -20,7 +20,7 @@ LioAnaIn::LioAnaIn(uint8_t pin, int LO_DEF, int HI_DEF, double LO_LIM, double HI
 
 
 // fonction privée mise à l'échelle
-double LioAnaIn::scale(double val, double LO_LIM, double HI_LIM)
+int LioAnaIn::scale(int val, int LO_LIM, int HI_LIM)
 {
     //return( ((val / 1023.0) * (HI_LIM - LO_LIM) ) + LO_LIM );
     return (val - m_LO_DEF) * (HI_LIM - LO_LIM) / (m_HI_DEF - m_LO_DEF) + LO_LIM;
@@ -35,7 +35,7 @@ void LioAnaIn::main()
 {
     int value = bruteVal();
     m_def = (value < m_LO_DEF || value > m_HI_DEF);
-    m_val = scale((double)value, m_LO_LIM, m_HI_LIM);
+    m_val = scale(value, m_LO_LIM, m_HI_LIM);
 }
 
 

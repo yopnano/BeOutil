@@ -22,6 +22,8 @@ Lcpt_Fcodeur codeur(2, 3, 0.11, 55);
 //Lreg_PID pid(0.7, 0.1, 0.04);
 //0.68 0.1 0.03
 
+//LioAna
+LioAnaIn mesureCourant(A1 ,0, 205, 0, 1);
 
 void Modsetup(void)
 {
@@ -30,6 +32,7 @@ void Modsetup(void)
     //for (auto &&iMoteur : moteur) iMoteur.setup();
     moteur.setup();
     codeur.setup();
+    mesureCourant.setup();
 }
 
 void ModMain(void)
@@ -37,4 +40,5 @@ void ModMain(void)
     //for (auto &&iMoteur : moteur) iMoteur.main();
     moteur.main();
     codeur.main();
+    mesureCourant.main();
 }
