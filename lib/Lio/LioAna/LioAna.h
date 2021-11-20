@@ -7,31 +7,31 @@ class LioAnaIn
 {
 
   public:
-    LioAnaIn(uint8_t pin, int m_LO_DEF = 0, int m_HI_DEF = 1023, int LO_LIM = 0, int HI_LIM = 100, int offset = 0);
+    LioAnaIn(uint8_t pin, short m_LO_DEF = 0, short m_HI_DEF = 1023, short LO_LIM = 0, short HI_LIM = 100, short offset = 0);
 
-    void    setup(void);
-    void    main(void);
+    void   setup(void);
+    void   main(void);
 
-    bool    def (void) const { return m_def; }
-    int  valScale (void) const { return m_val; }
+    bool   def (void) const { return m_def; }
+    short  valScale (void) const { return m_val; }
     double val (void) const { return (analogRead(m_pin) * m_HI_LIM / (double) m_HI_DEF); }
 
-    int     bruteVal(void) const { return analogRead(m_pin); }
+    uint8_t bruteVal(void) const { return analogRead(m_pin); }
 
   private:
     uint8_t m_pin;
 
-    int     m_LO_DEF;
-    int     m_HI_DEF;
+    short  m_LO_DEF;
+    short  m_HI_DEF;
 
-    int  m_LO_LIM;
-    int  m_HI_LIM;
-    int  m_offset;
+    short  m_LO_LIM;
+    short  m_HI_LIM;
+    short  m_offset;
 
-    short   m_val;
-    bool    m_def;
+    short  m_val;
+    bool   m_def;
     
-    int  scale(int val, int LO_LIM, int HI_LIM);
+    short  scale(short val, short LO_LIM, short HI_LIM);
 };
 
 
