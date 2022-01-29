@@ -1,10 +1,15 @@
-#include <global.cpp>
+#include "Global.cpp"
+
 int tempo1s = 0;
 int g7 = 0;
+bool mem = 0;
 
 void setup()
 {
   Modsetup();
+  moteur.pidMode(false);
+  moteur.keepEnable(false);
+  moteur.csgAuto(255); //150
 }
 
 void loop()
@@ -14,26 +19,10 @@ void loop()
   sys.main();
   ModMain();
 
-
-
-  if (sys.ft1Hz()) Serial.println( (double) mesureCourant.val());
-
-
-
-
-
-
 // Test de moteur codeur
-  moteur.pidMode(false);
-  moteur.csgAuto(255);
-  moteur.cmdAv(true);
+  
   //double vitesse = codeur.vitesseAbs() * 0.233;
 
-  if (sys.ft2Hz()and false)
-  {
-    Serial.print("vitesse : " + (String) codeur.vitesse());
-    Serial.println("  position : " + (String) codeur.position());
-  }
 
   if (sys.ft1Hz()) tempo1s ++;
 
@@ -55,4 +44,10 @@ void loop()
     tempo1s = 0;
     g7 = 0;
   }
+
+  if (!moteur.running())
+  {
+    moteur.step(mem ? 5000 : -5000);
+    mem = !mem;
+  } 
 }

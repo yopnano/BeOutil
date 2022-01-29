@@ -1,13 +1,15 @@
 #include "Lctrl_Stepper.h"
 
+// V 0.0.2 => Ajout microstep
 
-LctrlStepper::LctrlStepper(unsigned char pinStep, unsigned char pinDir, unsigned char pinEnable, unsigned short stepsRevolution, unsigned short vMax, unsigned char mode,  unsigned char csgMin, unsigned char csgMax, unsigned char rampeAcc) :
+LctrlStepper::LctrlStepper(unsigned char pinStep, unsigned char pinDir, unsigned char pinEnable, unsigned short stepsRevolution, unsigned short microstep, unsigned short vMax, unsigned char mode,  unsigned char csgMin, unsigned char csgMax, unsigned char rampeAcc) :
     LctrlMoteur(mode, 0, 255, csgMin, csgMax, rampeAcc),
     m_speed(),
     m_keepEnable(false),
     m_pinDir(pinDir),
     m_pinEnable(pinEnable),
     m_stepsPerRevolution(stepsRevolution),
+    m_microStep (microstep),
     m_vMax(vMax),
     m_vitesse(0),
     m_step(0),
@@ -52,7 +54,7 @@ void LctrlStepper::main(void)
     // 33M / (vitesse * nbre pas/rev)
     if (m_vitesse > 0)
     {
-        unsigned long microDelay = 33333333 / (m_vitesse * (uint32_t) m_stepsPerRevolution);
+        unsigned long microDelay = 33333333 / (m_vitesse * m_stepsPerRevolution);
         if (micros() - m_lastMicros >= microDelay)
         {
             m_lastMicros = micros();

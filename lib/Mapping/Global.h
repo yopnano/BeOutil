@@ -2,7 +2,7 @@
 #define Global_h
 
 
-#define ProjectName "LightDectNeoSw DEV 0.1 [en cours de test]"
+#define ProjectName "BeOutil DEV 0.1 [en cours de test]"
 
 
 /* 
@@ -31,6 +31,7 @@
     #include <Lctrl_Moteur\Lctrl_MoteurTOR\Lctrl_MoteurTOR.h>
     #include <Lctrl_Moteur\Lctrl_DriveS500\Lctrl_DriveS500.h>
     #include <Lctrl_Moteur\Lctrl_Brushless\Lctrl_Brushless.h>
+    #include <Lctrl_Moteur\Lctrl_Stepper\Lctrl_Stepper.h>
     #include <Lctrl_Moteur\Lctrl_Servo\Lctrl_Servo.h>
 
     //Lctrl_NeoPixel
